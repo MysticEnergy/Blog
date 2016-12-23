@@ -44,6 +44,63 @@
         <property name="resolveLazily" value="true"/>
     </bean>
 
+
+    <!-- ===================================================== -->
+    <!-- ViewResolver For FreeMarkerConfigurer -->
+    <!-- ===================================================== -->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->
+            <props>
+                <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒 -->
+                <prop key="default_encoding">UTF-8</prop><!--模板的编码格式 -->
+                <prop key="locale">UTF-8</prop><!-- 本地化设置 -->
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="time_format">HH:mm:ss</prop>
+                <prop key="number_format">0.####</prop>
+                <prop key="boolean_format">true,false</prop>
+                <prop key="whitespace_stripping">true</prop>
+                <prop key="tag_syntax">auto_detect</prop>
+                <prop key="url_escaping_charset">UTF-8</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean
+            class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="viewResolvers">
+            <list>
+                <!-- 配置freeMarker视图解析器 -->
+                <bean
+                        class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+                    <property name="cache" value="true" />
+                    <property name="prefix" value="" /><!-- 上面已经配了，这里就不用配啦 -->
+                    <property name="suffix" value=".ftl" />
+                    <property name="contentType" value="text/html;charset=UTF-8" />
+                    <property name="viewClass"
+                              value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+                    <property name="allowSessionOverride" value="true" />
+                    <property name="allowRequestOverride" value="true" />
+                    <property name="exposeSpringMacroHelpers" value="false" />
+                    <property name="exposeRequestAttributes" value="true" />
+                    <property name="exposeSessionAttributes" value="true" />
+                    <property name="requestContextAttribute" value="request" />
+                </bean>
+                <bean id="viewResolver"
+                      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="prefix" value="" />
+                    <property name="viewNames" value="*.html,*.jsp" />
+                    <property name="suffix" value="" />
+                    <property name="viewClass"
+                              value="org.springframework.web.servlet.view.InternalResourceView" />
+                    <property name="order" value="1"></property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
     <!-- 配置ViewResolver 。可用多个ViewResolver 。使用order属性排序。   InternalResourceViewResolver 放在最后-->
    <!-- <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
         <property name="order" value="1"></property>
@@ -65,9 +122,9 @@
     </bean>-->
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        &lt;!&ndash; 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 &ndash;&gt;
         <property name="prefix" value="/" />
         <property name="suffix" value=".jsp" />
-    </bean>
+    </bean>-->
 </beans>
