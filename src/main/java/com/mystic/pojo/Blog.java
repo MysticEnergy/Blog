@@ -2,7 +2,7 @@ package com.mystic.pojo;
 
 import java.util.Date;
 
-public class blog {
+public class Blog {
     private Integer id;
 
     private String title;
