@@ -15,29 +15,24 @@
                     <small> nothing</small>
                 </h1>
                 <form class="form-search" style="display: inline;float: right;">
-                    <input class="input-medium search-query" hidden="true" type="text"/>
-                    <button type="submit" class="btn">查找</button>
+                    <input class="input-medium search-query"  type="text"/>
+                    <button type="submit" class="btn btn-lg">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        查找</button>
                 </form>
             </div>
-
-            <h2 style="padding-top: 30px">
-                博文标题
-            </h2>
-            <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui.
-            </p>
-            <span class="label label-success">标签</span>
-            <h2 style="padding-top: 30px">
-                博文标题
-            </h2>
-            <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui.
-            </p>
-            <span class="label label-primary">标签</span>
+            <#list blogs as item>
+                <h2 style="padding-top: 30px">
+                    ${item.title}
+                </h2>
+                <h4>
+                    <small> ${item.createTime} / ${item.hits}点击</small>
+                </h4>
+                <p>
+                     ${item.content}
+                </p>
+                <span class="label label-success">${item.tag}</span>
+            </#list>
         </div>
     </div>
 </div>
