@@ -16,6 +16,19 @@ public class BlogRspDTO {
 
     private String updateTime;
 
+    @Override
+    public String toString() {
+        return "BlogRspDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", tag='" + tag + '\'' +
+                ", hits=" + hits +
+                '}';
+    }
+
     private String tag;
 
     private Long hits;
@@ -26,18 +39,6 @@ public class BlogRspDTO {
 
     public void setHits(Long hits) {
         this.hits = hits;
-    }
-
-    @Override
-    public String toString() {
-        return "BlogRspDTO{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                ", tag='" + tag + '\'' +
-                '}';
     }
 
     public String getTitle() {

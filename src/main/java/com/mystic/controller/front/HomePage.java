@@ -20,8 +20,7 @@ public class HomePage {
     @RequestMapping("/homePage")
     public ModelAndView showHomePage(ModelAndView modelAndView){
         modelAndView.setViewName("/front/homePage");
-        modelAndView.addObject("blogs",blogServices);
-        //        return "/front/homePage";
+        modelAndView.addObject("blogs",blogServices.selectAllBlogs());
         return modelAndView;
     }
 

@@ -49,6 +49,7 @@ public class BlogServices {
             blogrspDTO.setUpdateTime(sdf.format(blog.getUpdateTime()));
         }
         blogrspDTO.setTag(blog.getTag());
+        blogrspDTO.setHits(blog.getHits());
         return blogrspDTO;
     }
 
