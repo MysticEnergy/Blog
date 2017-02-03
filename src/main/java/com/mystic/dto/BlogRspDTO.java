@@ -16,6 +16,16 @@ public class BlogRspDTO {
 
     private String updateTime;
 
+    private String abstractContent;
+
+    public String getAbstractContent() {
+        return abstractContent;
+    }
+
+    public void setAbstractContent(String abstractContent) {
+        this.abstractContent = abstractContent;
+    }
+
     @Override
     public String toString() {
         return "BlogRspDTO{" +
@@ -29,7 +39,7 @@ public class BlogRspDTO {
                 '}';
     }
 
-    private String tag;
+    private String[] tag;
 
     private Long hits;
 
@@ -73,11 +83,11 @@ public class BlogRspDTO {
         this.updateTime = updateTime;
     }
 
-    public String getTag() {
+    public String[] getTag() {
         return tag;
     }
 
-    public void setTag(String tag) {
+    public void setTag(String[] tag) {
         this.tag = tag;
     }
 
