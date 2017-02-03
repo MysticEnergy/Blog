@@ -35,6 +35,26 @@ public class BlogServices {
         }
         return blogRspDTOList;
     }
+    /*
+    * 点击量增加
+    * @TODO 考虑多线程
+    * */
+    public void updateHits(Integer id){
+        Blog blog = blogMapper.selectByPrimaryKey(id);
+        Blog newBlog = new Blog();
+        newBlog.setId(blog.getId());
+        newBlog.setHits(blog.getHits() + 1);
+        blogMapper.updateByPrimaryKeySelective(newBlog);
+    }
+
+    /*
+    * 根据ID进行选择性更新
+    * by imguang
+    * */
+    public void updateByIdSelective(Integer id,Blog blog){
+        blogMapper.updateByPrimaryKeySelective(blog);
+    }
+
     public BlogRspDTO selectById(int id){
         BlogRspDTO blogRspDTO = blog2DTO(blogMapper.selectByPrimaryKey(id));
         return blogRspDTO;
@@ -66,7 +86,7 @@ public class BlogServices {
         //缩略文字为64个字
         int length = blog.getContent().length();
         if(length >= 128){
-            blogrspDTO.setAbstractContent(blog.getContent().substring(0,64)+"...");
+            blogrspDTO.setAbstractContent(blog.getContent().substring(0,128)+"...");
         } else {
             blogrspDTO.setAbstractContent(blog.getContent());
         }
