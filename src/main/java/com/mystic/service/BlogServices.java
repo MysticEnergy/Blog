@@ -1,16 +1,13 @@
 package com.mystic.service;
 
-import com.mystic.dto.BlogReqDTO;
-import com.mystic.dto.BlogRspDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.mystic.dao.BlogMapper;
+import com.mystic.dto.BlogRspDTO;
 import com.mystic.pojo.Blog;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

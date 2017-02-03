@@ -12,15 +12,20 @@ import javax.annotation.Resource;
  */
 @Controller
 @RequestMapping("/admmmmin")
-public class HomePage {
+public class EndHomePage {
     @Resource
     BlogServices blogServices;
 
-    @RequestMapping("/homePage")
+    @RequestMapping({"/homePage","/index"})
     public ModelAndView showHomePage(ModelAndView modelAndView){
         modelAndView.setViewName("/end/index");
         modelAndView.addObject("blogs",blogServices);
         //        return "/front/homePage";
+        return modelAndView;
+    }
+    @RequestMapping("/list")
+    public ModelAndView showList(ModelAndView modelAndView){
+        modelAndView.setViewName("/end/list");
         return modelAndView;
     }
 }

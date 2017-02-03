@@ -13,7 +13,6 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/blog")
 public class HomePage {
-
     @Resource
     BlogServices blogServices;
 
