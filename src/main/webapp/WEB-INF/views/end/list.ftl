@@ -76,63 +76,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <th>title</th>
                     <th>create time</th>
                     <th>update time</th>
+                    <th>operation</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="active">
-                    <th scope="row">1</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="success">
-                    <th scope="row">3</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="info">
-                    <th scope="row">5</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="warning">
-                    <th scope="row">7</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="danger">
-                    <th scope="row">9</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                </tr>
+                <#list blogs as item>
+                    <tr class = "active">
+                        <td scope="row">${item.id}</td>
+                        <td>${item.title}</td>
+                        <td>${item.createTime}</td>
+                        <td>
+                            <#if item.updateTime??>
+                                ${item.updateTime}
+                            <#else>
+                            NEVER
+                            </#if>
+                        </td>
+                        <td>
+                            <form>
+                            <button type="button" class="btn btn-default" href="#">修改</button>
+                            <button type="button" class="btn btn-danger" href="/list/${item.id}">删除</button>
+                            </form>
+                        </td>
+                    </tr>
+                </#list>
                 </tbody>
             </table>
         </div>

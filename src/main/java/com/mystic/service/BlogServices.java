@@ -30,6 +30,13 @@ public class BlogServices {
         }
         return blogRspDTOList;
     }
+    public BlogRspDTO selectById(int id){
+        BlogRspDTO blogRspDTO = blog2DTO(blogMapper.selectByPrimaryKey(id));
+        return blogRspDTO;
+    }
+    public int delById(int id){
+        return blogMapper.deleteByPrimaryKey(id);
+    }
 
     /*
     * 把pojo转换为DTO
