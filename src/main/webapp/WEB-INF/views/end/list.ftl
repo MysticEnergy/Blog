@@ -27,6 +27,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Graph JavaScript -->
 	<script src="../../../resources/js/end/d3.v3.js"></script>
 	<script src="../../../resources/js/end/rickshaw.js"></script>
+    <script>
+        function deleteBlog(id) {
+            $.ajax({
+                url:'/admmmmin/list/'+id,
+                type:'delete',
+                async:true,
+                success:window.location.reload()
+            })
+        }
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -93,10 +103,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </#if>
                         </td>
                         <td>
-                            <form>
                             <button type="button" class="btn btn-default" href="#">修改</button>
-                            <button type="button" class="btn btn-danger" href="/list/${item.id}">删除</button>
-                            </form>
+                            <button type="button" class="btn btn-danger" onclick="deleteBlog(${item.id})">删除</button>
                         </td>
                     </tr>
                 </#list>
@@ -115,5 +123,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- /#wrapper -->
 <!-- Bootstrap Core JavaScript -->
 <script src="../../../resources/js/common/bootstrap.min.js"></script>
+
 </body>
 </html>

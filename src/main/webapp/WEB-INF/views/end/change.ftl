@@ -67,7 +67,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+
     <div id="page-wrapper">
+        <div>
+            <form class="form-horizontal" style="margin-left: 100px">
+                <fieldset>
+                    <div id="legend" class="">
+                        <legend class="row_3">发布/修改文章</legend>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
+                        </div>
+                    </div>
+                    <div class="control-group">
+
+                        <!-- Textarea -->
+                        <label class="control-label">正文：</label>
+                        <div class="controls">
+                            <div class="textarea">
+                                <textarea type="text" style="width:60%;height:300px;" class=""> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Button -->
+                        <div class="controls">
+                            <button class="btn btn-success">发布</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
                 <div class="clearfix"> </div>
                 <div class="clearfix"> </div>
             </div>
