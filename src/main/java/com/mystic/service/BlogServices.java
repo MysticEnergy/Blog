@@ -27,7 +27,7 @@ public class BlogServices {
 
     public List<BlogRspDTO> selectAllBlogs() {
         List<BlogRspDTO> blogRspDTOList = new ArrayList<BlogRspDTO>();
-        List<Blog> blogs = blogMapper.selectAll();
+        List<Blog> blogs = blogMapper.selectAllBlogs();
         for (Blog blog : blogs) {
             blogRspDTOList.add(blog2DTO(blog));
         }
@@ -40,16 +40,16 @@ public class BlogServices {
     * */
 
     public BlogRspDTO blog2DTO(Blog blog) {
-        BlogRspDTO blogreqDTO = new BlogRspDTO();
-        blogreqDTO.setId(blog.getId());
-        blogreqDTO.setCreateTime(sdf.format(blog.getCreateTime()));
-        blogreqDTO.setContent(blog.getContent());
-        blogreqDTO.setTitle(blog.getTitle());
+        BlogRspDTO blogrspDTO = new BlogRspDTO();
+        blogrspDTO.setId(blog.getId());
+        blogrspDTO.setCreateTime(sdf.format(blog.getCreateTime()));
+        blogrspDTO.setContent(blog.getContent());
+        blogrspDTO.setTitle(blog.getTitle());
         if (blog.getUpdateTime() != null) {
-            blogreqDTO.setUpdateTime(sdf.format(blog.getUpdateTime()));
+            blogrspDTO.setUpdateTime(sdf.format(blog.getUpdateTime()));
         }
-        blogreqDTO.setTag(blog.getTag());
-        return blogreqDTO;
+        blogrspDTO.setTag(blog.getTag());
+        return blogrspDTO;
     }
 
 

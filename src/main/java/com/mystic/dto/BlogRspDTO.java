@@ -18,6 +18,16 @@ public class BlogRspDTO {
 
     private String tag;
 
+    private Long hits;
+
+    public Long getHits() {
+        return hits;
+    }
+
+    public void setHits(Long hits) {
+        this.hits = hits;
+    }
+
     @Override
     public String toString() {
         return "BlogRspDTO{" +
