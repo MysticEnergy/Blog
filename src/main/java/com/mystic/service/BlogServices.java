@@ -44,6 +44,10 @@ public class BlogServices {
         return blogMapper.deleteByPrimaryKey(id);
     }
 
+    public int insert(Blog blog){
+        return blogMapper.insert(blog);
+    }
+
     /*
     * 把pojo转换为DTO
     * @TODO 用反射实现

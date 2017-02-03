@@ -87,6 +87,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				</div>
+                <div class="col-md-3 widget widget1" onclick="javascript:window.location.href='/admmmmin/post'">
+                    <div class="r3_counter_box">
+                        <i class="pull-left fa fa-adn icon-rounded"></i>
+                        <div class="stats" style="margin-top: 20px">
+                            <span>New POST</span>
+                        </div>
+                    </div>
+                </div>
 				<div class="clearfix"> </div>
 				<div class="clearfix"> </div>
 			</div>

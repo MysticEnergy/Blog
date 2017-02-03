@@ -27,6 +27,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Graph JavaScript -->
 	<script src="../../../resources/js/end/d3.v3.js"></script>
 	<script src="../../../resources/js/end/rickshaw.js"></script>
+    <script>
+        function postBlog() {
+            $.ajax({
+                url:'/admmmmin/post',
+                type:'post',
+                data:$('#postForm').serialize(),
+                async:false,
+               success:window.location.href='/admmmmin/index'
+            })
+        }
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -70,14 +81,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div id="page-wrapper">
         <div>
-            <form class="form-horizontal" style="margin-left: 100px">
+            <form id="postForm" class="form-horizontal" style="margin-left: 100px">
                 <fieldset>
                     <div id="legend" class="">
                         <legend class="row_3">发布/修改文章</legend>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
+                            <input name="title" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
                         </div>
                     </div>
                     <div class="control-group">
@@ -86,14 +97,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label class="control-label">正文：</label>
                         <div class="controls">
                             <div class="textarea">
-                                <textarea type="text" style="width:60%;height:300px;" class=""> </textarea>
+                                <textarea name="content" type="text" style="width:60%;height:300px;"> </textarea>
                             </div>
                         </div>
                     </div>
                     <div class="control-group">
                         <!-- Button -->
                         <div class="controls">
-                            <button class="btn btn-success">发布</button>
+                            <button type="button" class="btn btn-success" onclick="postBlog()" onsubmit="false">发布</button>
                         </div>
                     </div>
 
