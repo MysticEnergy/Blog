@@ -21,7 +21,7 @@
             <h2 style="padding-top: 30px">
             ${oneBlog.title}
             </h2>
-            <p>
+            <p style="font-size: 16px">
             ${oneBlog.content}
             </p>
             <h4>

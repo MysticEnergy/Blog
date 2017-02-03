@@ -15,42 +15,45 @@
                     <small> nothing</small>
                 </h1>
                 <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+                    <input type="text" class="form-control" value="Search..." onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Search...';}">
                 </form>
             </div>
-            <#list blogs as item>
+        <#list blogs as item>
+            <a href="/blog/${item.id}" style="text-decoration: none">
                 <h2 style="padding-top: 30px">
-                    ${item.title}
+                ${item.title}
                 </h2>
-                <h4>
-                    <small> ${item.createTime} / ${item.hits}点击</small>
-                </h4>
-                <p>
-                     ${item.abstractContent}
-                </p>
-                <#list item.tag as tag>
-                    <#switch tag_index%6>
-                        <#case 0>
-                            <span class="label label-warning">${tag}</span>
-                            <#break>
-                        <#case 1>
-                            <span class="label label-info">${tag}</span>
-                            <#break>
-                        <#case 2>
-                            <span class="label label-default">${tag}</span>
-                            <#break>
-                        <#case 3>
-                            <span class="label label-danger">${tag}</span>
-                            <#break>
-                        <#case 4>
-                            <span class="label label-primary">${tag}</span>
-                            <#break>
-                        <#case 5>
-                            <span class="label label-success">${tag}</span>
-                            <#break>
-                    </#switch>
-                </#list>
+            </a>
+            <h4>
+                <small> ${item.createTime} / ${item.hits}点击</small>
+            </h4>
+            <p>
+            ${item.abstractContent}
+            </p>
+            <#list item.tag as tag>
+                <#switch tag_index%6>
+                    <#case 0>
+                        <span class="label label-warning">${tag}</span>
+                        <#break>
+                    <#case 1>
+                        <span class="label label-info">${tag}</span>
+                        <#break>
+                    <#case 2>
+                        <span class="label label-default">${tag}</span>
+                        <#break>
+                    <#case 3>
+                        <span class="label label-danger">${tag}</span>
+                        <#break>
+                    <#case 4>
+                        <span class="label label-primary">${tag}</span>
+                        <#break>
+                    <#case 5>
+                        <span class="label label-success">${tag}</span>
+                        <#break>
+                </#switch>
             </#list>
+        </#list>
         </div>
     </div>
 </div>

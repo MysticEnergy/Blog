@@ -33,6 +33,7 @@ public class HomePage {
     * */
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ModelAndView showOneBlog(ModelAndView modelAndView,@PathVariable Integer id){
+        blogServices.updateHits(id);
         modelAndView.setViewName("/front/oneBlog");
         modelAndView.addObject("oneBlog",blogServices.selectById(id));
         return modelAndView;
