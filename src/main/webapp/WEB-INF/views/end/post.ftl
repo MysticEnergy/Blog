@@ -102,6 +102,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                     <div class="control-group">
+                        <div class="controls">
+                            <input name="tag" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标签" class="input-xlarge">
+                        </div>
+                    </div>
+                    <div class="control-group">
                         <!-- Button -->
                         <div class="controls">
                             <button type="button" class="btn btn-success" onclick="postBlog()" onsubmit="false">发布</button>

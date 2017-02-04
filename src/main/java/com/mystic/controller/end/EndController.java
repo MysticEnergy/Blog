@@ -58,7 +58,9 @@ public class EndController {
         Blog blog = new Blog();
         blog.setTitle(blogReqDTO.getTitle());
         blog.setContent(blogReqDTO.getContent());
+        blog.setTag(blogReqDTO.getTag());
         blog.setCreateTime(new Date());
+        blog.setHits(0L);
         blogServices.insert(blog);
     }
 }
