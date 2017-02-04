@@ -37,16 +37,16 @@
 
 		<div id="container"></div>
 		<div id="info"> Mystic Energy</div>
-		<div id="enter"><a href="#" target="_blank">Enter Blog</a></div>
+		<div id="enter"><a href="/blog/homePage" target="_blank">Enter Blog</a></div>
 
-		<script src="js/three.js"></script>
+		<script src="resources/js/three.js"></script>
 
-		<script src="js/Projector.js"></script>
-		<script src="js/CanvasRenderer.js"></script>
+		<script src="resources/js/Projector.js"></script>
+		<script src="resources/js/CanvasRenderer.js"></script>
 
-		<script src="js/stats.min.js"></script>
+		<script src="resources/js/stats.min.js"></script>
 
-		<script src="js/Bird.js"></script>
+		<script src="resources/js/Bird.js"></script>
 
 		<script>
 
