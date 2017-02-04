@@ -1,21 +1,22 @@
-package com.mystic.pojo;
+package com.mystic.dto;
 
 import java.util.Date;
 
-public class Blog {
+/**
+ * Created by 书生 on 2017/2/3.
+ */
+public class BlogReqDTO {
     private Integer id;
 
     private String title;
+
+    private String content;
 
     private Date createTime;
 
     private Date updateTime;
 
     private String tag;
-
-    private Long hits;
-
-    private String content;
 
     public Integer getId() {
         return id;
@@ -31,6 +32,14 @@ public class Blog {
 
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
     public Date getCreateTime() {
@@ -57,19 +66,5 @@ public class Blog {
         this.tag = tag == null ? null : tag.trim();
     }
 
-    public Long getHits() {
-        return hits;
-    }
 
-    public void setHits(Long hits) {
-        this.hits = hits;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
 }
