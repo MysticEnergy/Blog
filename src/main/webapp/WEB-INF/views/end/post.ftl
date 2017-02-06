@@ -17,7 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- jQuery -->
 	<script src="../../../resources/js/common/jquery-3.0.0.min.js"></script>
 	<!----webfonts--->
-	<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 	<!---//webfonts--->
 	<!-- Nav CSS -->
 	<link href="../../../resources/css/end/custom.css" rel="stylesheet">
@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="../../../resources/js/end/rickshaw.js"></script>
     <script>
         function postBlog() {
+            //TODO:表单验证
             $.ajax({
                 url:'/admmmmin/post',
                 type:'post',
