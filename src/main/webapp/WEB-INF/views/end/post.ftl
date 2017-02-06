@@ -30,13 +30,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         function postBlog() {
             //TODO:表单验证
-            $.ajax({
-                url:'/admmmmin/post',
-                type:'post',
-                data:$('#postForm').serialize(),
-                async:false,
-               success:window.location.href='/admmmmin/index'
-            })
+            if($("#title").val()==null||$("#title").val().trim()==""){
+                alert("Title can't be null!");
+            }else if($("#content").val()==null||$("#content").val().trim()=="") {
+                alert("Content can't be null!");
+            }else {
+                $.ajax({
+                    url: '/admmmmin/post',
+                    type: 'post',
+                    data: $('#postForm').serialize(),
+                    async: false,
+                    success: window.location.href = '/admmmmin/index'
+                })
+            }
         }
     </script>
 </head>
@@ -89,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input name="title" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
+                            <input id="title" name="title" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
                         </div>
                     </div>
                     <div class="control-group">
@@ -98,19 +104,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label class="control-label">正文：</label>
                         <div class="controls">
                             <div class="textarea">
-                                <textarea name="content" type="text" style="width:60%;height:300px;"> </textarea>
+                                <textarea id="content" name="content" type="text" style="width:60%;height:300px;"> </textarea>
                             </div>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input name="tag" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标签" class="input-xlarge">
+                            <input id="tag" name="tag" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标签" class="input-xlarge">
                         </div>
                     </div>
                     <div class="control-group">
                         <!-- Button -->
                         <div class="controls">
-                            <button type="button" class="btn btn-success" onclick="postBlog()" onsubmit="false">发布</button>
+                            <button type="button" class="btn btn-success" onclick="postBlog()">发布</button>
                         </div>
                     </div>
 
