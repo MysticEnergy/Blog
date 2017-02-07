@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet"
           href="/resources/css/common/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/resources/css/common/mainPage-font.css"/>
 </head>
 <body>
 <div class="container">
