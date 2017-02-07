@@ -46,6 +46,12 @@ public class EndController {
         blogServices.delById(id);
     }
 
+    @RequestMapping(value = "/list/{id}",method = RequestMethod.GET)
+    public ModelAndView updateBlog(@PathVariable Integer id,ModelAndView modelAndView){
+        modelAndView.setViewName("/end/post");
+        modelAndView.addObject("blog",blogServices.selectById(id));
+        return modelAndView;
+    }
 
     @RequestMapping("/post")
     public ModelAndView post(ModelAndView modelAndView){

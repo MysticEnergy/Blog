@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input id="title" name="title" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge">
+                            <input id="title" name="title" type="text" style="width:60%;overflow-x:visible;overflow-y:visible;" placeholder="请输入标题" class="input-xlarge" value="${blog.title!''}">
                         </div>
                     </div>
                     <div class="control-group">
@@ -104,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label class="control-label">正文：</label>
                         <div class="controls">
                             <div class="textarea">
-                                <textarea id="content" name="content" type="text" style="width:60%;height:300px;"> </textarea>
+                                <textarea id="content" name="content" type="text" style="width:60%;height:300px;">${blog.content!''}</textarea>
                             </div>
                         </div>
                     </div>

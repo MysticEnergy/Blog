@@ -36,6 +36,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 success:window.location.reload()
             })
         }
+        function updateBlog(id) {
+            window.location.href = '/admmmmin/list/'+id;
+        }
     </script>
 </head>
 <body>
@@ -103,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </#if>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-default" href="#">修改</button>
+                            <button type="button" class="btn btn-default" onclick="updateBlog(${item.id})">修改</button>
                             <button type="button" class="btn btn-danger" onclick="deleteBlog(${item.id})">删除</button>
                         </td>
                     </tr>
