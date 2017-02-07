@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.ftl">MysticEnergy</a>
+			<a class="navbar-brand" href="index">MysticEnergy</a>
 		</div>
 		<!-- /.navbar-header -->
 		<form class="navbar-form navbar-right">
@@ -49,13 +49,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
 					<li>
-						<a href="index.ftl"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+						<a href="index"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-table nav_icon"></i>Tables<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li>
-								<a href="list.ftl">Basic Tables</a>
+								<a href="list">Basic Tables</a>
 							</li>
 						</ul>
 						<!-- /.nav-second-level -->
