@@ -55,12 +55,17 @@ public class EndController {
 
     @RequestMapping(value = "/post",method = RequestMethod.POST)
     public void commitPost(BlogReqDTO blogReqDTO){
+        //TODO：表单验证
         Blog blog = new Blog();
-        blog.setTitle(blogReqDTO.getTitle());
-        blog.setContent(blogReqDTO.getContent());
-        blog.setTag(blogReqDTO.getTag());
-        blog.setCreateTime(new Date());
-        blog.setHits(0L);
-        blogServices.insert(blog);
+        if (blogReqDTO.getTitle() != null && !blogReqDTO.getTitle().equals("")&&blogReqDTO.getContent() != null && !blogReqDTO.getContent().equals("")) {
+            blog.setTitle(blogReqDTO.getTitle());
+            blog.setContent(blogReqDTO.getContent());
+            blog.setTag(blogReqDTO.getTag());
+            blog.setCreateTime(new Date());
+            blog.setHits(0L);
+            blogServices.insert(blog);
+        }else {
+            return;
+        }
     }
 }
